@@ -228,4 +228,19 @@ return [
 
     ],
 
+    'default' => env('DB_CONNECTION', 'mysql'),
+
+    'mysql' => [
+        'driver'    => 'mysql',
+        'host'      => 'localhost:8889',
+        'database'  => 'test',
+        'username'  => 'root',
+        'password'  => 'root',
+        'charset'   => 'utf8',
+        'collation' => 'utf8_unicode_ci',
+        'unix_socket'   => '/Applications/MAMP/tmp/mysql/mysql.sock',
+        'prefix'    => '',
+        'strict'    => false,
+    ],
+
 ];
