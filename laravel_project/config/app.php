@@ -233,7 +233,7 @@ return [
     'mysql' => [
         'driver'    => 'mysql',
         'host'      => 'localhost:8889',
-        'database'  => 'test',
+        'database'  => 'laravel_project',
         'username'  => 'root',
         'password'  => 'root',
         'charset'   => 'utf8',
