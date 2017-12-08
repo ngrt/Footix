@@ -11,10 +11,25 @@ class TeamsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            'name' => str_random(10),
-            'email' => str_random(10).'@gmail.com',
-            'password' => bcrypt('secret'),
+        DB::table('teams')->delete();
+
+        DB::table('teams')->insert([
+            ['name' => 'Australia',
+            'coach' => 'Ange Postecoglou',
+            'flag' => 'australia.png',
+            'group' => 'C'],
+            ['name' => 'France',
+            'coach' => 'Didier Deschamps',
+            'flag' => 'france.png',
+            'group' => 'C'],
+            ['name' => 'Danemark',
+            'coach' => 'Age Hareide',
+            'flag' => 'danemark.png',
+            'group' => 'C'],
+            ['name' => 'Peru',
+            'coach' => 'Ricardo Gareca',
+            'flag' => 'peru.png',
+            'group' => 'C'],
         ]);
     }
 }
