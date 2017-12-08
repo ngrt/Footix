@@ -30,4 +30,5 @@ Route::prefix('admin')->group(function() {
     Route::get('/players', 'AdminController@players_index')->name('admin.players_index');
 
     Route::get('/players/{id}/edit', 'AdminController@players_edit')->name('admin.players_edit');
+    Route::put('/players/{id}', 'AdminController@players_update')->name('admin.players_update');
 });

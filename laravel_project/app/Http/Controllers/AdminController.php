@@ -34,11 +34,36 @@ class AdminController extends Controller
         return view('admin/players_index', compact('players'));
     }
 
+    public function create()
+    {
+        return view('admin/players_create');
+    }
 
     public function players_edit($id)
     {
         $player = Player::find($id);
+        $teams = Team::pluck('name', 'id');
+        return view('admin/players_edit', compact('player','teams'));
+    }
+
+    public function players_update($id, Request $request)
+    {
+        $player = Player::findOrFail($id);
+        $player->update($request->all());
+        return redirect(route("admin.players_index"));
+    }
+
+    public function teams_index()
+    {
+        $teams = Team::all()->orderBy("group");
+        return view('admin/teams_index', compact('teams'));
+    }
+
+
+    public function teams_edit($id)
+    {
+        $team = Team::find($id);
         //dd($player);
-        return view('admin/players_edit', compact('player'));
+        return view('admin/teams_edit', compact('team'));
     }
 }

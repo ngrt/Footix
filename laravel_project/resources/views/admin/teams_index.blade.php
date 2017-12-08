@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Player Dashboard</div>
+                    <div class="panel-heading">Teams Dashboard</div>
 
                     <div class="panel-body">
                         <table class="table table-striped custab">
@@ -14,18 +14,18 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
-                                <th>Role</th>
-                                <th>Team</th>
+                                <th>Coach</th>
+                                <th>Group</th>
                                 <th class="text-center">Action</th>
                             </tr>
                             </thead>
-                        @foreach($players as $player)
+                        @foreach($teams as $team)
                             <tr>
-                                <td>{{ $player->id }}</td>
-                                <td>{{ $player->name }}</td>
-                                <td>{{ $player->role }}</td>
-                                <th>{{ $player->team->name }}</th>
-                                <td class="text-center"><a class='btn btn-info btn-xs' href="{{ route('admin.players_edit', $player) }}"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                                <td>{{ $team->id }}</td>
+                                <td>{{ $team->name }}</td>
+                                <td>{{ $team->coach }}</td>
+                                <th>{{ $team->group }}</th>
+                                <td class="text-center"><a class='btn btn-info btn-xs' href="{{ route('admin.players_edit', ["id"=>$team->id]) }}"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
                             </tr>
 
                         @endforeach
