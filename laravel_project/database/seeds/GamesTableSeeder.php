@@ -29,7 +29,6 @@ class GamesTableSeeder extends Seeder
 
             'odd_draw' => '5.50',
 
-
             'mdate' => Carbon::createFromFormat('Y-m-d', '2018-06-16')->toDateTimeString(),
 
             'stadium' => 'Kazan Arena'],
