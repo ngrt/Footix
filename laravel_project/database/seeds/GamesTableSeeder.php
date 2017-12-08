@@ -12,12 +12,14 @@ class GamesTableSeeder extends Seeder
      */
     public function run()
     {
-    	DB::table('games')->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        DB::table('games')->truncate();
+
         DB::table('games')->insert([
 
-            ['team1_id' => 7,
+            ['team1_id' => 2,
 
-            'team2_id' => 6,
+            'team2_id' => 1,
 
             'score1' => '0',
 
@@ -35,9 +37,9 @@ class GamesTableSeeder extends Seeder
 
             
 
-            ['team1_id' => 9,
+            ['team1_id' => 4,
 
-            'team2_id' => 8,
+            'team2_id' => 3,
 
             'score1' => '0',
 
@@ -55,9 +57,9 @@ class GamesTableSeeder extends Seeder
             'stadium' => 'Mordovia Arena'],
 
 
-            ['team1_id' => 8,
+            ['team1_id' => 3,
 
-            'team2_id' => 6,
+            'team2_id' => 1,
 
             'score1' => '0',
 
@@ -76,9 +78,9 @@ class GamesTableSeeder extends Seeder
 
 
 
-            ['team1_id' => 7,
+            ['team1_id' => 2,
 
-            'team2_id' => 9,
+            'team2_id' => 4,
 
             'score1' => '0',
 
@@ -96,9 +98,9 @@ class GamesTableSeeder extends Seeder
             'stadium' => 'Stade Central'],
 
 
-            ['team1_id' => 8,
+            ['team1_id' => 3,
 
-            'team2_id' => 7,
+            'team2_id' => 2,
 
             'score1' => '0',
 
@@ -116,9 +118,9 @@ class GamesTableSeeder extends Seeder
             'stadium' => 'Stade Loujniki'],
 
 
-            ['team1_id' => 6,
+            ['team1_id' => 1,
 
-            'team2_id' => 9,
+            'team2_id' => 4,
 
             'score1' => '0',
 
@@ -134,8 +136,6 @@ class GamesTableSeeder extends Seeder
             'mdate' => Carbon::createFromFormat('Y-m-d', '2018-06-26')->toDateTimeString(),
 
             'stadium' => 'Stade Olympique Ficht'],
-
-
 
         ]);
     }

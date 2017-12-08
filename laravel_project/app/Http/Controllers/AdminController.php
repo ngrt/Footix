@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Player;
 
 class AdminController extends Controller
 {
@@ -23,6 +24,13 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin');
+        return view('admin/admin');
+    }
+
+    public function players_index()
+    {
+        $players = Player::all();
+        dd($players);
+        return view('admin/players_index');
     }
 }

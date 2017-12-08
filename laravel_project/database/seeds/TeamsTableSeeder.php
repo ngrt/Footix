@@ -11,7 +11,8 @@ class TeamsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('teams')->delete();
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+        DB::table('teams')->truncate();
 
         DB::table('teams')->insert([
             ['name' => 'Australia',
