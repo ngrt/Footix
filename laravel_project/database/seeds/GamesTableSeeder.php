@@ -52,7 +52,7 @@ class GamesTableSeeder extends Seeder
 
             'mdate' => Carbon::createFromFormat('Y-m-d', '2018-06-16')->toDateTimeString(),
 
-            'stadium' => ' Mordovia Arena'],
+            'stadium' => 'Mordovia Arena'],
 
 
             ['team1_id' => 8,
@@ -72,7 +72,7 @@ class GamesTableSeeder extends Seeder
 
             'mdate' => Carbon::createFromFormat('Y-m-d', '2018-06-21')->toDateTimeString(),
 
-            'stadium' => ' Cosmos Arena'],
+            'stadium' => 'Cosmos Arena'],
 
 
 
@@ -93,7 +93,7 @@ class GamesTableSeeder extends Seeder
 
             'mdate' => Carbon::createFromFormat('Y-m-d', '2018-06-21')->toDateTimeString(),
 
-            'stadium' => '  Stade Central'],
+            'stadium' => 'Stade Central'],
 
 
             ['team1_id' => 8,
@@ -113,7 +113,7 @@ class GamesTableSeeder extends Seeder
 
             'mdate' => Carbon::createFromFormat('Y-m-d', '2018-06-26')->toDateTimeString(),
 
-            'stadium' => 'stade Loujniki'],
+            'stadium' => 'Stade Loujniki'],
 
 
             ['team1_id' => 6,
