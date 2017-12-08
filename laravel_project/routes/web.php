@@ -28,4 +28,6 @@ Route::prefix('admin')->group(function() {
 
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
     Route::get('/players', 'AdminController@players_index')->name('admin.players_index');
+
+    Route::get('/players/{id}/edit', 'AdminController@players_edit')->name('admin.players_edit');
 });

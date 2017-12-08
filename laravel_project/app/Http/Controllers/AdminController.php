@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Player;
+use App\Team;
 
 class AdminController extends Controller
 {
@@ -30,7 +31,14 @@ class AdminController extends Controller
     public function players_index()
     {
         $players = Player::all();
-        dd($players);
-        return view('admin/players_index');
+        return view('admin/players_index', compact('players'));
+    }
+
+
+    public function players_edit($id)
+    {
+        $player = Player::find($id);
+        //dd($player);
+        return view('admin/players_edit', compact('player'));
     }
 }
