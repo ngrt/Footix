@@ -20,6 +20,8 @@
                             </tr>
                             </thead>
                         @foreach($players as $player)
+                        <img src="{{ asset('images/players/' . $player->url_photo) }}">
+                            
                             <tr>
                                 <td>{{ $player->id }}</td>
                                 <td>{{ $player->name }}</td>
