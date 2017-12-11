@@ -17,7 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+
+Route::get('/teams', 'TeamController@index')->name('teams.index');
+Route::get('/teams/{id}', 'TeamController@show')->name('teams.show');
 
 Route::get('user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
@@ -63,5 +66,4 @@ Route::prefix('admin')->group(function() {
     Route::get('/users/{id}/edit', 'AdminController@users_edit')->name('admin.users.edit');
     Route::put('/users/{id}', 'AdminController@users_update')->name('admin.users.update');
     Route::delete('/users/{id}', 'AdminController@users_destroy')->name('admin.users.destroy');
-
 });

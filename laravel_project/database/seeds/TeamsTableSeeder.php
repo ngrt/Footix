@@ -17,19 +17,19 @@ class TeamsTableSeeder extends Seeder
         DB::table('teams')->insert([
             ['name' => 'Australia',
             'coach' => 'Ange Postecoglou',
-            'flag' => 'australia.png',
+            'flag' => 'AU.png',
             'group' => 'C'],
             ['name' => 'France',
             'coach' => 'Didier Deschamps',
-            'flag' => 'france.png',
+            'flag' => 'FR.png',
             'group' => 'C'],
             ['name' => 'Danemark',
             'coach' => 'Age Hareide',
-            'flag' => 'danemark.png',
+            'flag' => 'DK.png',
             'group' => 'C'],
             ['name' => 'Peru',
             'coach' => 'Ricardo Gareca',
-            'flag' => 'peru.png',
+            'flag' => 'PE.png',
             'group' => 'C'],
         ]);
     }
