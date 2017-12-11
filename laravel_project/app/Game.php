@@ -28,4 +28,9 @@ class Game extends Model
     {
         return $this->belongsTo('App\Team', 'team2_id', 'id');
     }
+
+    public function bets()
+    {
+        return $this->belongsToMany('App\Game');
+    }
 }

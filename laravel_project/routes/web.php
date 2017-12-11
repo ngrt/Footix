@@ -25,6 +25,17 @@ Route::get('/teams/{id}', 'TeamController@show')->name('teams.show');
 Route::get('/players', 'PlayerController@index')->name('player.index');
 Route::get('/players/{id}', 'PlayerController@show')->name('player.show');
 
+Route::get("/amount/add", "BetController@add")->name('amount.add');
+Route::post("/amount", "BetController@store_add")->name('amount.store');
+
+Route::get("/bets", "BetController@index")->name('bets.index');
+Route::get("/bets/create", "BetController@create")->name('bets.create');
+Route::post("/bets/store", "BetController@store")->name('bets.store');
+
+Route::get('/games', 'GameController@index')->name('game.index');
+Route::get('/games/{id}', 'GameController@show')->name('game.show');
+
+
 Route::get('user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
 Route::prefix('admin')->group(function() {

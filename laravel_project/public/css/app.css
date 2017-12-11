@@ -268,3 +268,9 @@
     background: url(http://c.boylett.uk/generic/image_png_00004.png);
     background-position: 0 -18px;
 }
+
+body
+{
+    background-image: url('../images/background.jpg');
+    background-repeat:no-repeat;
+}

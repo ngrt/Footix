@@ -33,7 +33,7 @@
                                             
                                             </thead>
                                     @foreach($games_date as $key => $game)
-                                        <tr>
+                                        <tr data-href="{{ route('game.show', $game->id) }}">
                                             <th>{{ $teams->find($game->team1_id)->name }}</th>
                                             <th><img width="20px" height="20px" src="{{ asset('images/flags/' . $teams->find($game->team1_id)->flag) }}">
                                             </th>
@@ -61,9 +61,7 @@
         $(document).ready(function() {
 
             $("tr").click(function(){
-
                 window.location = $(this).data("href");
-
             });
 
             $("tr").hover(function() {
