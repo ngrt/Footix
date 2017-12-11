@@ -23,7 +23,7 @@ class PlayersTableSeeder extends Seeder
                 'yellow_cards' => 0,
                 'red_cards' => 0,
                 'games' => 0,
-                'url_photo' => '/images/players/photo_player.jpg',
+                'url_photo' => 'gallese.png',
             ],
             [
                 'team_id' => 4,
@@ -33,7 +33,7 @@ class PlayersTableSeeder extends Seeder
                 'yellow_cards' => 0,
                 'red_cards' => 0,
                 'games' => 0,
-                'url_photo' => 'public/images/players/photo_player.jpg',
+                'url_photo' => 'ramos.png',
             ],
             [
                 'team_id' => 4,
@@ -43,7 +43,7 @@ class PlayersTableSeeder extends Seeder
                 'yellow_cards' => 0,
                 'red_cards' => 0,
                 'games' => 0,
-                'url_photo' => 'public/images/players/photo_player.jpg',
+                'url_photo' => 'flores.png',
             ],
             [
                 'team_id' => 2,
@@ -53,7 +53,7 @@ class PlayersTableSeeder extends Seeder
                 'yellow_cards' => 0,
                 'red_cards' => 0,
                 'games' => 0,
-                'url_photo' => 'benzema.jpg',
+                'url_photo' => 'benzema.png',
             ],
             [
                 'team_id' => 2,
@@ -63,7 +63,7 @@ class PlayersTableSeeder extends Seeder
                 'yellow_cards' => 0,
                 'red_cards' => 0,
                 'games' => 0,
-                'url_photo' => 'public/images/players/photo_player.jpg',
+                'url_photo' => 'mbappe.png',
             ],
             [
                 'team_id' => 2,
@@ -73,7 +73,7 @@ class PlayersTableSeeder extends Seeder
                 'yellow_cards' => 0,
                 'red_cards' => 0,
                 'games' => 0,
-                'url_photo' => 'public/images/players/photo_player.jpg',
+                'url_photo' => 'umtiti.png',
             ],
             [
                 'team_id' => 3,
@@ -83,7 +83,7 @@ class PlayersTableSeeder extends Seeder
                 'yellow_cards' => 0,
                 'red_cards' => 0,
                 'games' => 0,
-                'url_photo' => 'public/images/players/photo_player.jpg',
+                'url_photo' => 'kjaer.png',
             ],
             [
                 'team_id' => 3,
@@ -93,7 +93,7 @@ class PlayersTableSeeder extends Seeder
                 'yellow_cards' => 0,
                 'red_cards' => 0,
                 'games' => 0,
-                'url_photo' => 'public/images/players/photo_player.jpg',
+                'url_photo' => 'bendtner.jpg',
             ],
             [
                 'team_id' => 3,
@@ -103,7 +103,7 @@ class PlayersTableSeeder extends Seeder
                 'yellow_cards' => 0,
                 'red_cards' => 0,
                 'games' => 0,
-                'url_photo' => 'public/images/players/photo_player.jpg',
+                'url_photo' => 'eriksen.jpg',
             ],
             [
                 'team_id' => 1,
@@ -113,7 +113,7 @@ class PlayersTableSeeder extends Seeder
                 'yellow_cards' => 0,
                 'red_cards' => 0,
                 'games' => 0,
-                'url_photo' => 'public/images/players/photo_player.jpg',
+                'url_photo' => 'cahill.png',
             ],
             [
                 'team_id' => 1,
@@ -123,7 +123,7 @@ class PlayersTableSeeder extends Seeder
                 'yellow_cards' => 0,
                 'red_cards' => 0,
                 'games' => 0,
-                'url_photo' => 'public/images/players/photo_player.jpg',
+                'url_photo' => 'jurik.png',
             ],
             [
                 'team_id' => 1,
@@ -133,7 +133,7 @@ class PlayersTableSeeder extends Seeder
                 'yellow_cards' => 0,
                 'red_cards' => 0,
                 'games' => 0,
-                'url_photo' => 'public/images/players/photo_player.jpg',
+                'url_photo' => 'jedinak.jpg',
             ],
 
         ]);
