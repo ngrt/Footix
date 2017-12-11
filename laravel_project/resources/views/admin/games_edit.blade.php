@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Edit a team</div>
+                    <div class="panel-heading">Edit a game</div>
 
                     <div class="panel-body">
                         @include('errors')
@@ -18,14 +18,14 @@
                                 </div>
                                 <div class="form-group">
                                     {!! Form::label('score1', 'Score') !!}
-                                    {!! Form::text('score1', $game->score1, ['class' => 'form-control']) !!}
+                                    {!! Form::text('score1', $game->score1, ['class' => 'form-control', 'id' => 'score-1']) !!}
                                 </div>
                                 <div class="form-group">
                                     {!! Form::label('odd1', 'Odd') !!}
                                     {!! Form::text('odd1', $game->odd1, ['class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group" id="add-buttons-1">
-                                    <a href="#" class="btn btn-block btn-primary btn-xs" id="add-goal-1"><b>+</b> Add a goal</a>
+                                    <a href="{{ route('admin.goals.create', ['id_game' => $game, "id_team" => $game->team1]) }}" class="btn btn-block btn-primary btn-xs" id="add-goal-1"><b>+</b> Add a goal</a>
                                     <a href="#" class="btn btn-block btn-warning btn-xs" id="add-yellow-1"><b>+</b> Add a yellow card</a>
                                     <a href="#" class="btn btn-block btn-danger btn-xs" id="add-red-1"><b>+</b> Add a red card</a>
                                 </div>
@@ -44,7 +44,7 @@
                                     {!! Form::text('odd2', $game->odd2, ['class' => 'form-control']) !!}
                                 </div>
                                 <div class="form-group" id="add-buttons-2">
-                                    <a href="#" class="btn btn-block btn-primary btn-xs" id="add-goal-2"><b>+</b> Add a goal</a>
+                                    <a href="{{ route("admin.goals.create", ['id_game' => $game, "id_team" => $game->team2]) }}" class="btn btn-block btn-primary btn-xs" id="add-goal-2"><b>+</b> Add a goal</a>
                                     <a href="#" class="btn btn-block btn-warning btn-xs" id="add-yellow-2"><b>+</b> Add a yellow card</a>
                                     <a href="#" class="btn btn-block btn-danger btn-xs" id="add-red-2"><b>+</b> Add a red card</a>
                                 </div>
@@ -69,7 +69,7 @@
             </div>
         </div>
     </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script type="text/javascript">
-
 </script>
 @endsection

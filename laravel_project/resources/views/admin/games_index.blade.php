@@ -39,7 +39,7 @@
                                             <th>{{ $teams->find($game->team1_id)->name }}</th>
                                             <th>VS</th>
                                             <th>{{ $teams->find($game->team2_id)->name }}</th>
-                                            <td class="text-center"><a class='btn btn-info btn-xs' href="{{ route('admin.games.edit', $game) }}">Edit</a>{!! Form::open(['method' => 'delete', "route" => ['admin.players.destroy', $game], "style" => 'display: inline']) !!} {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!} {!! Form::close() !!}</td>
+                                            <td class="text-center"><a class='btn btn-info btn-xs' href="{{ route('admin.games.edit', $game) }}">Edit</a>{!! Form::open(['method' => 'delete', "route" => ['admin.games.destroy', $game], "style" => 'display: inline']) !!} {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-xs']) !!} {!! Form::close() !!}</td>
                                         </tr>
                                     @endforeach
                                         </table>

@@ -8,6 +8,7 @@ class Game extends Model
 {
 
     protected $fillable = ['team1_id', "team2_id", "score1", "score2", "odd1", "odd2", "odd_draw", "mdate", "stadium_id"];
+
     public function goals()
     {
         return $this->hasmany('App\Goal');

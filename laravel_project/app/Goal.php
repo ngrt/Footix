@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Goal extends Model
 {
+
+    protected $fillable = ["game_id", "team_id", "player_id", "gtime"];
     public function game()
     {
         return $this->belongsTo('App\Game');

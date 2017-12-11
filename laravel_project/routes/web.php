@@ -44,12 +44,24 @@ Route::prefix('admin')->group(function() {
     Route::put('/teams/{id}', 'AdminController@teams_update')->name('admin.teams.update');
     Route::delete('/teams/{id}', 'AdminController@teams_destroy')->name('admin.teams.destroy');
 
-    //ressource game
+    //resource game
     Route::get('/games', 'AdminController@games_index')->name('admin.games.index');
     Route::get('/games/create', 'AdminController@games_create')->name('admin.games.create');
     Route::post('/games', 'AdminController@games_store')->name('admin.games.store');
-
     Route::get('/games/{id}/edit', 'AdminController@games_edit')->name('admin.games.edit');
     Route::put('/games/{id}', 'AdminController@games_update')->name('admin.games.update');
+    Route::delete('/games/{id}', 'AdminController@games_destroy')->name('admin.games.destroy');
+
+    //resource goal
+    Route::get('/goals/create/{id_game}/{id_team}', 'AdminController@goals_create')->name('admin.goals.create');
+    Route::post('/goals/{id}', 'AdminController@goals_store')->name('admin.goals.store');
+
+    //resource user
+    Route::get('/users', 'AdminController@users_index')->name('admin.users.index');
+    Route::get('/users/create', 'AdminController@users_create')->name('admin.users.create');
+    Route::post('/users', 'AdminController@users_store')->name('admin.users.store');
+    Route::get('/users/{id}/edit', 'AdminController@users_edit')->name('admin.users.edit');
+    Route::put('/users/{id}', 'AdminController@users_update')->name('admin.users.update');
+    Route::delete('/users/{id}', 'AdminController@users_destroy')->name('admin.users.destroy');
 
 });

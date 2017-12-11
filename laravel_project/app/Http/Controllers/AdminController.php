@@ -10,6 +10,8 @@ use App\Team;
 use App\Role;
 use App\Game;
 use App\Stadium;
+use App\Goal;
+use App\User;
 use Illuminate\Support\Facades\Validator;
 
 class AdminController extends Controller
@@ -140,11 +142,24 @@ class AdminController extends Controller
     {
         $games = Game::orderBy('mdate', 'asc')->get()->groupBy('mdate');
         $teams = Team::all();
+
         return view('admin/games_index', compact('games', "teams"));
     }
 
     public function games_create()
     {
+        $game = new Game();
+        $teams = Team::pluck('name', 'id');
+        $stadiums = Stadium::pluck('name', 'id');
+        return view('admin/games_create', compact('game', 'teams', 'stadiums'));
+
+    }
+
+    public function games_store(Request $request)
+    {
+        Game::create($request->all());
+        $request->session()->flash('alert-success', 'Game was successfully added');
+        return redirect(route("admin.games.index"));
     }
 
     public function games_edit($id)
@@ -161,17 +176,91 @@ class AdminController extends Controller
 
         $stadiums = Stadium::pluck('name', 'id');
 
+
         return view('admin/games_edit', compact('players1', 'players2', 'team1', 'team2', 'game', 'stadiums', 'teams'));
     }
 
     public function games_update($id, Request $request)
     {
-        $team = Team::findOrFail($id);
         $game = Game::findOrFail($id);
 
         $game->update($request->all());
 
         $request->session()->flash('alert-success', 'Game was successfully updated');
         return redirect(route("admin.games.index"));
+    }
+
+    public function games_destroy($id, Request $request)
+    {
+        $game = Game::findOrFail($id);
+        $game->delete();
+        $request->session()->flash('alert-success', 'Game was successfully deleted');
+        return redirect(route("admin.games.index"));
+    }
+
+    //goal actions
+    public function goals_create($id_game, $id_team)
+    {
+        $game = Game::findOrFail($id_game);
+        $team = Team::findOrFail($id_team);
+        $players = Player::whereIn("team_id", $team)->pluck('name', 'id');
+        return view("admin/goals_create", compact("players", "team", "game"));
+    }
+
+    public function goals_store(Request $request, $id)
+    {
+        //dd($request->input());
+        Goal::create($request->all());
+        $request->session()->flash('alert-success', 'Goal was successfully added');
+        return redirect(route("admin.games.edit", $id));
+    }
+
+    //users Controller
+
+    public function users_index()
+    {
+        $users = User::all();
+        return view('admin/users_index' ,compact('users'));
+    }
+
+    public function users_create()
+    {
+        $user = New user;
+        return view('admin/users_create');
+
+    }
+
+    public function users_store(Request $request)
+    {
+
+        User::create($request->all());
+        $request->session()->flash('alert-success', 'User was successfully added');
+        return redirect(route("admin.users.index"));
+
+    }
+
+
+    public function users_edit($id)
+    {
+        $user = User::find($id);
+        return view('admin/users_edit', compact('user') );
+    }
+
+
+    public function users_update($id, Request $request)
+    {
+        $user = User::findOrFail($id);
+        $user->update($request->all());
+        $request->session()->flash('alert-success', 'User was successfully updated');
+        return redirect(route("admin.users.index"));
+    }
+
+
+    public function users_destroy($id, Request $request)
+    {
+        $user = User::findOrFail($id);
+        $user->delete();
+        $request->session()->flash('alert-success', 'User was successfully deleted');
+        return redirect(route("admin.users.index"));
     }
 }
