@@ -37,7 +37,7 @@
                                 </a>
                             </div>
                             <div class="col-md-4">
-                                <a href="{{ route('admin.games.index') }}">
+                                <a href="{{ route('admin.users.index') }}">
                                     <div class="dash-box dash-box-color-2">
                                         <div class="dash-box-body">
                                             <span class="dash-box-count">Users</span>
