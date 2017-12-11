@@ -4,8 +4,8 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
 require('./bootstrap');
+require('./jquery-3.2.1.min');
 
 window.Vue = require('vue');
 

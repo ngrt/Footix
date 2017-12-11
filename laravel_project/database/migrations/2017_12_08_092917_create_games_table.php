@@ -15,8 +15,10 @@ class CreateGamesTable extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('team1_id');
-            $table->integer('team2_id');
+            $table->integer('team1_id')->unsigned()->index();
+            $table->foreign('team1_id')->references('id')->on('teams')->onDelete('cascade');
+            $table->integer('team2_id')->unsigned()->index();
+            $table->foreign('team2_id')->references('id')->on('teams')->onDelete('cascade');
             $table->integer('score1');
             $table->integer('score2');
             $table->integer('odd1');
