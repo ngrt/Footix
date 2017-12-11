@@ -40,7 +40,16 @@
                                     <a href="{{ route('bets.index') }}">
                                         <div class="dash-box dash-box-color-2">
                                             <div class="dash-box-body">
-                                                <span class="dash-box-count">Users</span>
+                                                <span class="dash-box-count">Bets</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-4">
+                                    <a href="{{ route('amount.add') }}">
+                                        <div class="dash-box dash-box-color-2">
+                                            <div class="dash-box-body">
+                                                <span class="dash-box-count">Fill account</span>
                                             </div>
                                         </div>
                                     </a>

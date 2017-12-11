@@ -46,6 +46,14 @@ class BetController extends Controller
     public function store(Request $request)
     {
         Bet::create($request->all());
+
+        $id = Auth::user()->id;
+        $user = User::find($id);
+
+        $user->increment('balance', -$request->input("amount"));
+
+        $user->save();
+
         $request->session()->flash('alert-success', 'Bet was successfully added. You have to wait for after the game is done.');
         return redirect(route('bets.index'));
     }
@@ -58,7 +66,7 @@ class BetController extends Controller
         $user->increment('balance', $request->input("amount"));
 
         $user->save();
-
+        return redirect(route('bets.index'));
 
     }
 }
