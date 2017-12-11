@@ -18,7 +18,7 @@ class PlayersTableSeeder extends Seeder
             [
                 'team_id' => 4,
                 'name' => 'Pedro Gallese',
-                'role_id' => 0,
+                'role_id' => 1,
                 'goals' => 0,
                 'yellow_cards' => 0,
                 'red_cards' => 0,

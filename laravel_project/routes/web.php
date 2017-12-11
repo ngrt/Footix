@@ -22,6 +22,9 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/teams', 'TeamController@index')->name('teams.index');
 Route::get('/teams/{id}', 'TeamController@show')->name('teams.show');
 
+Route::get('/players', 'PlayerController@index')->name('player.index');
+Route::get('/players/{id}', 'PlayerController@show')->name('player.show');
+
 Route::get('user/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
 Route::prefix('admin')->group(function() {
